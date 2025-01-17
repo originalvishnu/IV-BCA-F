@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+<head>
+    <title>Array Sorting</title>
+<body>
+    <h1>Array Sorting</h1>
+
+    <label for="inputArray">Enter elements separated by commas:</label><br>
+    <input type="text" id="inputArray"><br><br>
+
+    <button onclick="sortAlphabetically()">Sort Alphabetically</button>
+    <button onclick="sortNumerically()">Sort Numerically</button><br><br>
+
+    <div id="sortedArray"></div>
+
+        function sortAlphabetically() {
+            var input = document.getElementById("inputArray").value;
+            var array = input.split(',').map(item => item.trim());
+            array.sort();
+            document.getElementById("sortedArray").innerText = "Sorted Array (Alphabetically): " + array.join(', ');
+        }
+
+        function sortNumerically() {
+            var input = document.getElementById("inputArray").value;
+            var array = input.split(',').map(item => parseInt(item.trim(), 10));
+            array.sort((a, b) => a – b);
+document.getElementById("sortedArray").innerText = "Sorted Array (Numerically): " + array.join(', ');
+        }
+    </script>
+
